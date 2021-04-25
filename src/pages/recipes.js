@@ -1,12 +1,15 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../layout/Layout"
+import AllRecipes from "../components/AllRecipes"
 
 const Recipes = () => {
-  return (
-    <Layout>
-      <h1>Recipe page</h1>
-    </Layout>
-  )
+    return (
+        <Layout>
+            <main className="page">
+                <AllRecipes />
+            </main>
+        </Layout>
+    )
 }
 
 export default Recipes

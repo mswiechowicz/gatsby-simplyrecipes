@@ -1,20 +1,23 @@
 import React from "react"
-import Layout from "../components/Layout"
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  h1 {
-    color: lightgreen;
-    font-size: 2rem;
-  }
-`;
+import Layout from "../layout/Layout"
+import { StaticImage } from "gatsby-plugin-image"
+import AllRecipes from "../components/AllRecipes"
 
 const Home = () => {
   return (
     <Layout>
-      <Wrapper>
-        <h1>Hello world!</h1>
-      </Wrapper>
+        <main className="page">
+            <header className="hero">
+                <StaticImage  src="../assets/images/main.jpeg" alt="eggs on table" className="hero-img" placeholder="tracedSVG" layout="fullWidth" />
+                <div className="hero-container">
+                    <div className="hero-text">
+                        <h1>simply recipes</h1>
+                        <h4>no fluff, only recipes</h4>
+                    </div>
+                </div>
+            </header>
+            <AllRecipes />
+        </main>
     </Layout>
   )
 }

@@ -450,10 +450,13 @@ form > *:last-child {
 .page-footer p {
     margin-bottom: 0;
 }
-.page-footer span,
+.page-footer-span,
 .page-footer a {
     color: var(--primary-500);
 }
+/*.page-footer-gatsby-img {*/
+/*    vertical-align: middle;*/
+/*}*/
 
 /*#########*/
 /* Error */
@@ -505,10 +508,11 @@ form > *:last-child {
     .about-page {
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        height: 400px;
+        height: max-content;
     }
     .about-img {
         height: 100%;
+        max-height: 500px;
     }
 }
 
