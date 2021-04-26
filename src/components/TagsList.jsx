@@ -10,7 +10,7 @@ const TagsList = ({ recipes }) => {
                 <div className="tags-list">
                     {newTags.map((tag,index) => {
                         const [text, value] = tag;
-                        return <Link to={`/${text}`} key={index}> {text} ({value}) </Link>
+                        return <Link to={`/tags/${text}`} key={index}> {text} ({value}) </Link>
                     })}
                 </div>
             </div>

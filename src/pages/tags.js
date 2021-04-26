@@ -11,7 +11,7 @@ const Tags = ({ data: { allContentfulRecipe: { nodes: tags } } }) => {
                 <section className="tags-page">
                     {newTags.map((tag, index) => {
                         const [text, value] = tag
-                        return <Link className="tag" to={`/${text}`} key={index}>
+                        return <Link className="tag" to={`/tags/${text}`} key={index}>
                             <h5>{text}</h5>
                             <p>{value} {value > 1 ? "recipes" : "recipe"}</p>
                         </Link>

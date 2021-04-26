@@ -1,5 +1,3 @@
-import React from "react"
-
 const setupTags = recipes => {
     const allTags = {}
 

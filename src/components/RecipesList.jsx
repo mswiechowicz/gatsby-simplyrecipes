@@ -11,7 +11,7 @@ const RecipesList = ({ recipes = [] }) => {
                 const pathToImage = getImage(image);
                 const slug = slugify(title,{lower: true})
                 return <Link to={`/${slug}`} key={id} className="recipe">
-                    <GatsbyImage alt={title} image={pathToImage} className="recipe-img"/>
+                      <GatsbyImage alt={title} image={pathToImage} className="recipe-img"/>
                     <h5>{title}</h5>
                     <p>Prep: {prepTime}min | Cook: {cookTime}min</p>
                 </Link>
