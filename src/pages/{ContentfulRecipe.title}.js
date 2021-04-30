@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../layout/Layout"
 import { BsClock, BsClockHistory, BsPeople } from "react-icons/all"
+import slugify from "slugify"
+import Seo from "./SEO"
 
 const RecipeTemplate = ({ data }) => {
     console.log(data)
@@ -11,6 +13,7 @@ const RecipeTemplate = ({ data }) => {
     const { tags, instructions, ingredients, tools } = content
     return (
         <Layout>
+            <Seo title={title} description={description}/>
             <main className="page">
                 <div className="recipe-page">
                     {/* hero */}
@@ -39,7 +42,10 @@ const RecipeTemplate = ({ data }) => {
                             </div>
                             {/* tags */}
                             <p className="recipe-tags">
-                                Tags: {tags.map((tag, index) => <Link to={`/tags/${tag}`} key={index}> {tag} </Link>)}
+                                Tags: {tags.map((tag, index) => {
+                                const tagSlug = slugify(tag, { lower: true })
+                                return <Link to={`/tags/${tagSlug}`} key={index}> {tag} </Link>
+                            })}
                             </p>
                         </article>
                     </section>
@@ -62,11 +68,12 @@ const RecipeTemplate = ({ data }) => {
                         <article className="second-column">
                             <div>
                                 <h4>Ingrediens</h4>
-                                {ingredients.map((item,index)=> <p key={index} className="single-ingredient"> {item}</p>)}
+                                {ingredients.map((item, index) => <p key={index}
+                                                                     className="single-ingredient"> {item}</p>)}
                             </div>
                             <div>
                                 <h4>Tools</h4>
-                                {tools.map((item,index)=> <p key={index} className="single-tool"> {item}</p>)}
+                                {tools.map((item, index) => <p key={index} className="single-tool"> {item}</p>)}
                             </div>
                         </article>
                     </section>
